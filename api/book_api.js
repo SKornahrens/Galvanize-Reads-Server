@@ -37,7 +37,7 @@ router.get('/:id', isValidID, (req, res, next) => {
 router.post('/', (req, res, next) => {
   if(validBook(req.body)) {
     queries.create(req.body).then(book => {
-      res.json(book[0])
+      res.json("success")
     })
   } else {
     next(new Error('Invalid book post'));
@@ -47,7 +47,7 @@ router.post('/', (req, res, next) => {
 router.put('/:id', isValidID, (req, res, next) => {
   if(validBook(req.body)) {
     queries.update(req.params.id, req.body).then(bookDetails => {
-      res.json(bookDetails[0])
+      res.json("success")
     })
   } else {
     next(new Error('Invalid book put'));

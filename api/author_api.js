@@ -37,7 +37,7 @@ router.get('/:id', isValidID, (req, res, next) => {
 router.post('/', (req, res, next) => {
   if(validAuthor(req.body)) {
     queries.create(req.body).then(author => {
-      res.json(author[0])
+      res.json("success")
     })
   } else {
     next(new Error('Invalid author post'));
@@ -47,7 +47,7 @@ router.post('/', (req, res, next) => {
 router.put('/:id', isValidID, (req, res, next) => {
   if(validAuthor(req.body)) {
     queries.update(req.params.id, req.body).then(authorDetails => {
-      res.json(authorDetails[0])
+      res.json("success")
     })
   } else {
     next(new Error('Invalid author put'));

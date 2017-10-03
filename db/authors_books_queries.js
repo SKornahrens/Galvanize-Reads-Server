@@ -15,5 +15,5 @@ module.exports = {
   },
   delete(id) {
     return knex('author_book').where('author_book_pair', id).del();
-  }
+  },
 }
